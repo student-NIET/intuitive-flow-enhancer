@@ -23,7 +23,7 @@ const Landing = () => {
               <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-soft">
                 <Code className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-extrabold font-playfair uppercase tracking-wide bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-brand-glow">
                 HackMatch
               </h1>
             </div>
