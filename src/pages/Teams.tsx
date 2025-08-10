@@ -112,7 +112,7 @@ const Teams = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -131,7 +131,7 @@ const Teams = () => {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary/10 via-accent/5 to-transparent">
+      <section className="bg-gradient-to-br from-primary/10 via-accent/5 to-transparent dark:from-primary/15 dark:via-accent/10">
         <div className="container mx-auto px-4 py-8">
           <div className="rounded-2xl border bg-background/60 backdrop-blur p-6 shadow-sm animate-fade-in">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -184,7 +184,7 @@ const Teams = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-6">
         {activeTab === "my-teams" && (
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {myTeams.map((team) => (
               <MyTeamCard key={team.id} team={team} />
             ))}
@@ -192,17 +192,18 @@ const Teams = () => {
         )}
 
         {activeTab === "suggested" && (
-          <div className="space-y-6">
+          <div>
             <div className="text-center mb-6">
               <h2 className="text-lg font-semibold mb-2">Teams looking for your skills</h2>
               <p className="text-sm text-muted-foreground">
                 Based on your profile: React, TypeScript, UI/UX Design
               </p>
             </div>
-            
-            {suggestedTeams.map((team, index) => (
-              <SuggestedTeamCard key={index} team={team} />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {suggestedTeams.map((team, index) => (
+                <SuggestedTeamCard key={index} team={team} />
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -222,7 +223,7 @@ const MyTeamCard = ({ team }: { team: any }) => (
             <div className="flex items-center gap-2 mb-1">
               <h3 className="font-semibold text-lg">{team.name}</h3>
               {team.role === "Team Lead" && (
-                <Crown className="w-4 h-4 text-yellow-600" />
+                <Crown className="w-4 h-4 text-primary" />
               )}
             </div>
             <p className="text-sm text-muted-foreground">{team.project}</p>
@@ -241,7 +242,7 @@ const MyTeamCard = ({ team }: { team: any }) => (
         <div className="flex items-center gap-2">
           <div className="flex -space-x-2">
             {team.members.map((member: any, index: number) => (
-              <Avatar key={index} className="w-8 h-8 border-2 border-white">
+              <Avatar key={index} className="w-8 h-8 ring-2 ring-background">
                 <AvatarImage src={member.avatar} />
                 <AvatarFallback>{member.name[0]}</AvatarFallback>
               </Avatar>
