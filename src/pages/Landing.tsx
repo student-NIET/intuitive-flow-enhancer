@@ -12,10 +12,10 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen landing-bg">
+    <div className="min-h-screen landing-bg bg-background text-foreground">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent dark:from-primary/20 dark:via-accent/10" />
         
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">

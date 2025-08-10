@@ -18,4 +18,28 @@
   background-repeat: repeat;
   background-position: 0 0;
   animation: bg-scrolling-reverse 0.92s linear infinite;
+  position: relative;
+  isolation: isolate;
+  background-color: hsl(var(--background));
+}
+
+/* Overlay to improve contrast over the animated grid */
+.landing-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(var(--background) / 0.7), hsl(var(--background) / 0.7));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure page content sits above the overlay */
+.landing-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stronger overlay in dark mode */
+.dark .landing-bg::before {
+  background: linear-gradient(180deg, hsl(var(--background) / 0.85), hsl(var(--background) / 0.85));
 }
