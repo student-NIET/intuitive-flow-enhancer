@@ -29,7 +29,7 @@ const Index = () => {
 
 const LandingPage = ({ onSignIn }: { onSignIn: () => void }) => {
   return (
-    <div className="min-h-screen gradient-subtle">
+    <div className="min-h-screen bg-infinite-grid">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
