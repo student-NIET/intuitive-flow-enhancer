@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Code, User, Users, MessageCircle, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import "./Landing.css";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen gradient-subtle">
+    <div className="min-h-screen landing-bg">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
