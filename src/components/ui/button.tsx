@@ -19,6 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-primary/10 hover:text-primary transition-smooth",
         link: "text-primary underline-offset-4 hover:underline hover:text-primary/80",
         accent: "gradient-accent text-white shadow-soft hover:shadow-medium hover:scale-105 active:scale-95",
+        purple: "gradient-purple text-white shadow-soft hover:shadow-medium hover:scale-105 active:scale-95",
         social: "bg-white border-2 border-border text-foreground shadow-soft hover:shadow-medium hover:scale-105 hover:border-primary/30",
       },
       size: {
