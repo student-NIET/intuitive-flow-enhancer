@@ -59,7 +59,9 @@ const Teams = () => {
       color: "bg-green-100",
       iconColor: "text-green-600",
       progress: 75,
-      unreadMessages: 3
+      unreadMessages: 3,
+      description: "Building a sustainability tracker to help users monitor their carbon footprint and adopt eco‑friendly habits.",
+      skills: ["React", "TypeScript", "Tailwind", "Node.js"],
     },
     {
       id: 2,
@@ -75,7 +77,9 @@ const Teams = () => {
       color: "bg-blue-100",
       iconColor: "text-blue-600",
       progress: 100,
-      unreadMessages: 0
+      unreadMessages: 0,
+      description: "A platform that centralizes wellness tracking, coaching, and personalized recommendations for healthier living.",
+      skills: ["React", "GraphQL", "Prisma"],
     }
   ];
 
@@ -108,6 +112,10 @@ const Teams = () => {
       iconColor: "text-pink-600"
     }
   ];
+
+  const handleViewDetails = (team: any) => {
+    navigate(`/teams/${team.id}` as const, { state: { team } });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -186,7 +194,7 @@ const Teams = () => {
         {activeTab === "my-teams" && (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {myTeams.map((team) => (
-              <MyTeamCard key={team.id} team={team} />
+              <MyTeamCard key={team.id} team={team} onViewDetails={handleViewDetails} />
             ))}
           </div>
         )}
@@ -211,7 +219,7 @@ const Teams = () => {
   );
 };
 
-const MyTeamCard = ({ team }: { team: any }) => (
+const MyTeamCard = ({ team, onViewDetails }: { team: any; onViewDetails: (team: any) => void }) => (
   <Card className="p-6 border bg-card shadow-sm animate-fade-in hover-scale">
     <div className="space-y-4">
       <div className="flex items-start justify-between">
@@ -276,7 +284,7 @@ const MyTeamCard = ({ team }: { team: any }) => (
           <Calendar className="w-4 h-4 mr-2" />
           Schedule
         </Button>
-        <Button size="sm" className="flex-1">
+        <Button size="sm" className="flex-1" onClick={() => onViewDetails(team)} aria-label={`View details of ${team.name}`}>
           View Details
         </Button>
       </div>

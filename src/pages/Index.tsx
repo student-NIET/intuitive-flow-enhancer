@@ -112,7 +112,7 @@ const FeatureCard = ({ icon, title, description }: {
   title: string;
   description: string;
 }) => (
-  <Card className="p-8 text-center border-0 shadow-soft hover-lift bg-white/80 backdrop-blur-sm">
+  <Card className="p-8 text-center border bg-card shadow-sm hover-lift backdrop-blur-sm">
     <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-soft">
       {icon}
     </div>
@@ -127,7 +127,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -153,7 +153,7 @@ const Dashboard = () => {
       </header>
 
       {/* Navigation Tabs */}
-      <div className="border-b bg-white/50">
+      <div className="border-b bg-background/60">
         <div className="container mx-auto px-4">
           <div className="flex gap-8">
             {[
@@ -237,7 +237,7 @@ const DiscoverSection = () => {
 };
 
 const PersonCard = ({ person }: { person: any }) => (
-  <Card className="p-6 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-6 hover-lift border bg-card shadow-sm">
     <div className="text-center">
       <Avatar className="w-16 h-16 mx-auto mb-4">
         <AvatarImage src={person.avatar} />
@@ -301,7 +301,7 @@ const TeamsSection = () => {
 };
 
 const TeamCard = ({ team }: { team: any }) => (
-  <Card className="p-6 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-6 hover-lift border bg-card shadow-sm">
     <div className="flex items-start gap-4 mb-4">
       <div className={`w-12 h-12 ${team.color} rounded-xl flex items-center justify-center`}>
         <Lightbulb className="w-6 h-6" />

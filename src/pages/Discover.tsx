@@ -88,7 +88,7 @@ const Discover = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate("/dashboard")}>
@@ -144,7 +144,7 @@ const Discover = () => {
 };
 
 const PersonCard = ({ person }: { person: any }) => (
-  <Card className="p-6 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-6 hover-lift border bg-card shadow-sm">
     <div className="space-y-4">
       <div className="flex items-start gap-3">
         <Avatar className="w-12 h-12">

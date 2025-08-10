@@ -34,7 +34,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ const QuickActionCard = ({ icon, title, subtitle, onClick }: {
   subtitle: string;
   onClick: () => void;
 }) => (
-  <Card className="p-4 hover-lift cursor-pointer border-0 shadow-soft bg-white" onClick={onClick}>
+  <Card className="p-4 hover-lift cursor-pointer border bg-card shadow-sm" onClick={onClick}>
     <div className="text-center">
       <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-3 text-white shadow-soft">
         {icon}
@@ -172,7 +172,7 @@ const ActivityItem = ({ icon, title, description, time }: {
   description: string;
   time: string;
 }) => (
-  <Card className="p-4 border-0 shadow-soft bg-white">
+  <Card className="p-4 border bg-card shadow-sm">
     <div className="flex items-start gap-3">
       <div className="mt-1">{icon}</div>
       <div className="flex-1">
@@ -190,7 +190,7 @@ const SuggestedTeamCard = ({ name, members, project, skills }: {
   project: string;
   skills: string[];
 }) => (
-  <Card className="p-4 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-4 hover-lift border bg-card shadow-sm">
     <div className="flex items-start gap-3 mb-3">
       <div className="w-10 h-10 gradient-secondary rounded-xl flex items-center justify-center">
         <Lightbulb className="w-5 h-5 text-white" />

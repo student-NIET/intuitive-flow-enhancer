@@ -68,7 +68,7 @@ const Settings = () => {
   const renderMainSettings = () => (
     <div className="space-y-6">
       {settingsCategories.map((category, index) => (
-        <Card key={index} className="p-6 border-0 shadow-soft bg-white">
+        <Card key={index} className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">{category.title}</h3>
           <div className="space-y-1">
             {category.items.map((item, itemIndex) => (
@@ -89,7 +89,7 @@ const Settings = () => {
       ))}
 
       {/* Danger Zone */}
-      <Card className="p-6 border-0 shadow-soft bg-white">
+      <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4 text-destructive">Danger Zone</h3>
         <div className="space-y-3">
           <Button variant="outline" className="w-full justify-start text-destructive border-destructive/20 hover:bg-destructive/10">
@@ -103,7 +103,7 @@ const Settings = () => {
 
   const renderNotificationSettings = () => (
     <div className="space-y-6">
-      <Card className="p-6 border-0 shadow-soft bg-white">
+      <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Push Notifications</h3>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -141,7 +141,7 @@ const Settings = () => {
         </div>
       </Card>
 
-      <Card className="p-6 border-0 shadow-soft bg-white">
+      <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Email Notifications</h3>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -183,7 +183,7 @@ const Settings = () => {
 
   const renderPrivacySettings = () => (
     <div className="space-y-6">
-      <Card className="p-6 border-0 shadow-soft bg-white">
+       <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Profile Visibility</h3>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -230,7 +230,7 @@ const Settings = () => {
         </div>
       </Card>
 
-      <Card className="p-6 border-0 shadow-soft bg-white">
+       <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Communication</h3>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -249,7 +249,7 @@ const Settings = () => {
         </div>
       </Card>
 
-      <Card className="p-6 border-0 shadow-soft bg-white">
+       <Card className="p-6 border bg-card shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Security</h3>
         <div className="space-y-3">
           <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-smooth text-left">
@@ -277,7 +277,7 @@ const Settings = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <Button 
@@ -303,21 +303,21 @@ const Settings = () => {
         {activeSection === "privacy" && renderPrivacySettings()}
         
         {activeSection === "appearance" && (
-          <Card className="p-6 border-0 shadow-soft bg-white">
+            <Card className="p-6 border bg-card shadow-sm">
             <h3 className="text-lg font-semibold mb-4">Appearance</h3>
             <p className="text-muted-foreground">Dark mode and theme customization coming soon!</p>
           </Card>
         )}
         
         {activeSection === "language" && (
-          <Card className="p-6 border-0 shadow-soft bg-white">
+            <Card className="p-6 border bg-card shadow-sm">
             <h3 className="text-lg font-semibold mb-4">Language & Region</h3>
             <p className="text-muted-foreground">Multi-language support coming soon!</p>
           </Card>
         )}
         
         {activeSection === "help" && (
-          <Card className="p-6 border-0 shadow-soft bg-white">
+          <Card className="p-6 border bg-card shadow-sm">
             <h3 className="text-lg font-semibold mb-4">Help Center</h3>
             <p className="text-muted-foreground">Comprehensive help documentation is being prepared!</p>
           </Card>

@@ -96,7 +96,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -128,7 +128,7 @@ const Profile = () => {
 
       <div className="container mx-auto px-4 py-6 space-y-6">
         {/* Profile Header */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <div className="flex flex-col items-center text-center space-y-4">
             <div className="relative">
               <Avatar className="w-24 h-24">
@@ -185,7 +185,7 @@ const Profile = () => {
         </Card>
 
         {/* Contact & Links */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Contact & Links</h3>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -252,7 +252,7 @@ const Profile = () => {
         </Card>
 
         {/* Skills */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Skills</h3>
           <div className="space-y-3">
             <div className="flex flex-wrap gap-2">
@@ -289,7 +289,7 @@ const Profile = () => {
         </Card>
 
         {/* Interests */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Interests</h3>
           <div className="space-y-3">
             <div className="flex flex-wrap gap-2">
@@ -326,7 +326,7 @@ const Profile = () => {
         </Card>
 
         {/* Experience */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Experience</h3>
           {isEditing ? (
             <Textarea 
@@ -341,7 +341,7 @@ const Profile = () => {
         </Card>
 
         {/* Achievements */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Achievements</h3>
           <div className="space-y-3">
             {achievements.map((achievement, index) => (
@@ -357,7 +357,7 @@ const Profile = () => {
         </Card>
 
         {/* Team History */}
-        <Card className="p-6 border-0 shadow-soft bg-white">
+        <Card className="p-6 border bg-card shadow-sm">
           <h3 className="text-lg font-semibold mb-4">Team History</h3>
           <div className="space-y-3">
             {teamHistory.map((team, index) => (

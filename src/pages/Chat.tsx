@@ -120,7 +120,7 @@ const Chat = () => {
     return (
       <div className="min-h-screen bg-background">
         {/* Header */}
-        <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -166,7 +166,7 @@ const Chat = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Chat Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm">
+      <header className="border-b bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -181,7 +181,7 @@ const Chat = () => {
                     <AvatarFallback>{currentChat?.name[0]}</AvatarFallback>
                   </Avatar>
                   {currentChat?.online && (
-                    <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                    <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
                   )}
                 </div>
                 
@@ -220,7 +220,7 @@ const Chat = () => {
       </div>
 
       {/* Message Input */}
-      <div className="border-t bg-white/80 backdrop-blur-sm">
+      <div className="border-t bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="icon">
@@ -265,7 +265,7 @@ const ChatListItem = ({ chat, onClick }: { chat: any; onClick: () => void }) => 
           <AvatarFallback>{chat.name[0]}</AvatarFallback>
         </Avatar>
         {chat.online && (
-          <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+          <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
         )}
       </div>
       

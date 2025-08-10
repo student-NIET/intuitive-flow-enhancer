@@ -87,7 +87,7 @@ const FeatureCard = ({ icon, title, description }: {
   title: string;
   description: string;
 }) => (
-  <Card className="p-8 text-center border-0 shadow-soft hover-lift bg-white/80 backdrop-blur-sm">
+  <Card className="p-8 text-center border bg-card shadow-sm hover-lift backdrop-blur-sm">
     <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-soft">
       {icon}
     </div>
