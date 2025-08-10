@@ -11,10 +11,10 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen gradient-flat-90">
+    <div className="min-h-screen gradient-subtle">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        {/* flat gradient background (no overlay) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
         
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
