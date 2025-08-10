@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Code, Github, Linkedin, Users, MessageCircle, Trophy } from "lucide-react";
+import { Code, Github, Users, MessageCircle, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 
@@ -47,15 +47,6 @@ const Landing = () => {
                 Sign in with GitHub
               </Button>
               
-              <Button 
-                variant="social" 
-                size="lg" 
-                className="w-full sm:w-auto min-w-48"
-                onClick={handleSignIn}
-              >
-                <Linkedin className="mr-2" />
-                Sign in with LinkedIn
-              </Button>
             </div>
             
             <div className="text-sm text-muted-foreground">
