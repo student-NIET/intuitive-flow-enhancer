@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Code, Users, MessageCircle, Trophy } from "lucide-react";
+import { Code, Github, Users, MessageCircle, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 
@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen gradient-accent">
+    <div className="min-h-screen gradient-subtle">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
@@ -39,12 +39,12 @@ const Landing = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
-                variant="accent"
                 size="lg" 
                 className="w-full sm:w-auto min-w-48"
                 onClick={handleSignIn}
               >
-                Sign in with ERP
+                <Github className="mr-2" />
+                Sign in with GitHub
               </Button>
               
             </div>
