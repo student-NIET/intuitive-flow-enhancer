@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Code, Github, Users, MessageCircle, Trophy } from "lucide-react";
+import { Code, Users, MessageCircle, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 
@@ -39,12 +39,12 @@ const Landing = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
+                variant="accent"
                 size="lg" 
                 className="w-full sm:w-auto min-w-48"
                 onClick={handleSignIn}
               >
-                <Github className="mr-2" />
-                Sign in with GitHub
+                Sign in with ERP
               </Button>
               
             </div>
