@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { 
@@ -20,6 +21,28 @@ import { useNavigate } from "react-router-dom";
 const Teams = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("my-teams");
+
+  // SEO for Teams page
+  useEffect(() => {
+    document.title = "Teams | Find and manage teams";
+    const desc = "Explore your teams and discover suggested teams tailored to your skills.";
+
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content = desc;
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = `${window.location.origin}/teams`;
+  }, []);
 
   const myTeams = [
     {
@@ -107,26 +130,53 @@ const Teams = () => {
         </div>
       </header>
 
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-primary/10 via-accent/5 to-transparent">
+        <div className="container mx-auto px-4 py-8">
+          <div className="rounded-2xl border bg-background/60 backdrop-blur p-6 shadow-sm animate-fade-in">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h1 className="text-2xl md:text-3xl font-semibold">Build great things with your team</h1>
+                <p className="text-muted-foreground mt-1">Manage your teams and discover new ones that match your skills.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Badge variant="secondary" className="flex items-center gap-2">
+                  <Trophy className="w-4 h-4" />
+                  2 wins
+                </Badge>
+                <Badge variant="outline" className="flex items-center gap-2">
+                  <Users className="w-4 h-4" />
+                  {myTeams.length + suggestedTeams.length} teams
+                </Badge>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tabs */}
-      <div className="border-b bg-white/50">
+      <div className="border-b bg-background/80">
         <div className="container mx-auto px-4">
-          <div className="flex gap-8">
+          <div role="tablist" aria-label="Teams tabs" className="flex gap-2 py-3">
             {[
               { id: "my-teams", label: "My Teams" },
               { id: "suggested", label: "Suggested" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`py-4 px-2 border-b-2 transition-smooth ${
-                  activeTab === tab.id
-                    ? "border-primary text-primary font-semibold"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+            ].map((tab) => {
+              const active = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-4 py-2 rounded-full text-sm transition-colors hover-scale ${
+                    active ? "bg-primary text-primary-foreground shadow" : "bg-muted text-foreground/80 hover:bg-muted/80"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -161,7 +211,7 @@ const Teams = () => {
 };
 
 const MyTeamCard = ({ team }: { team: any }) => (
-  <Card className="p-6 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-6 border bg-card shadow-sm animate-fade-in hover-scale">
     <div className="space-y-4">
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-3">
@@ -202,8 +252,12 @@ const MyTeamCard = ({ team }: { team: any }) => (
           </span>
         </div>
         
-        <div className="text-sm text-muted-foreground">
-          Progress: {team.progress}%
+        <div className="w-40">
+          <div className="flex items-center justify-between text-sm text-muted-foreground mb-1">
+            <span>Progress</span>
+            <span>{team.progress}%</span>
+          </div>
+          <Progress value={team.progress} className="h-2" />
         </div>
       </div>
       
@@ -230,7 +284,7 @@ const MyTeamCard = ({ team }: { team: any }) => (
 );
 
 const SuggestedTeamCard = ({ team }: { team: any }) => (
-  <Card className="p-6 hover-lift border-0 shadow-soft bg-white">
+  <Card className="p-6 border bg-card shadow-sm animate-fade-in hover-scale">
     <div className="space-y-4">
       <div className="flex items-start gap-3">
         <div className={`w-12 h-12 ${team.color} rounded-xl flex items-center justify-center`}>
