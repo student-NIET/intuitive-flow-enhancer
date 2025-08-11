@@ -40,7 +40,7 @@ const Landing = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
-                variant="purple"
+                variant="default"
                 size="lg" 
                 className="w-full sm:w-auto min-w-48"
                 onClick={handleSignIn}
